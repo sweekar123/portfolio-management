@@ -1,0 +1,40 @@
+{% include 'new1/header.html' %}
+{% load static %}
+{% block content %}
+{% endblock %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'new1/css/new.css' %}">
+<body>
+<div>
+	{% for message in messages %}
+			<h1> {{message}} </h1>
+	{% endfor %}
+</div>
+
+<br><br>
+<br>
+
+
+
+
+<div class="card_2">
+	<h1>Log In </h1>
+	<p>For novelty technology login as username : novelty , password : novelty123</p>
+	<form action="{% url 'login' %}" method="POST" >
+		{% csrf_token %}
+		<input type="text" name="username" placeholder="Username" /><br><br>
+		<input type="password" name="password" placeholder="Password" /><br><br>
+		<button>Log-In</button>
+	</form>
+	<br>
+	<a href = "{% url 'register' %}"> Sign-Up</a>
+</div>
+<br><br>
+<div class="card_2">
+	<h1>Log In With </h1>
+	 Log in with Google  <a href="https://www.google.com/"><i class="fab fa-google"></i></a><br><br>
+	 Log in with Google  <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a><br><br>
+	 log in as guest <a href="" ><i class="fab fa-glide" ></i></a>
+	 
+      
+</div>

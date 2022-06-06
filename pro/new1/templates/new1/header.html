@@ -1,0 +1,43 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Here</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'new1/css/style.css' %}">
+</head> 
+  <header class="header">
+  <a href="{% url 'home' %}" class="logo">Developer</a>
+  <nav class="nav-items">
+    {% if user.is_authenticated %}
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'stock-list' %}">Stocks</a>
+      <a href="{% url 'sapi' %}">Stocks API</a>
+      <a href="{% url 'ownerlist' %}">Your Products</a>
+      <a href="{% url 'list' %}">Products</a>
+      <a href="{% url 'papi' %}">Products API</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'portfolio' %}">Portfolio</a>
+      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% url 'logout' %}">Log-Out</a>
+      <a href="">Hello {{user.username}}</a>
+
+    {% else %}
+      <a href="{% url 'list' %}">Products</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'portfolio' %}">Portfolio</a>
+      <a href="{% url 'register' %}">Register</a>
+      <a href="{% url 'login' %}">Log-In</a>
+    {% endif %}
+  </nav>
+</header>
+
+
+
+

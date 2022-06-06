@@ -1,0 +1,67 @@
+{% load static %}
+{% include 'new1/header.html' %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Here</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'new1/css/portfolio.css' %}">
+</head> 
+
+{% block content %}
+{% endblock %}
+ <br></br>
+ <br></br>
+
+
+<div class="card">
+  <img src="{% static 'new1/images/django.jpeg' %}" alt="Avatar" style="width:70%">
+  <div class="container">
+    <h4><b>Python Django</b></h4>
+    <p>Backend Web Application Development.</p>
+  </div>
+</div>
+
+  <div class="card">
+  <img src="{% static 'new1/images/mern.jpeg' %}" alt="Avatar" style="width:70%">
+  <div class="container">
+    <h4><b>M.E.R.N</b></h4>
+    <p>Full Stack Web Application Development.</p>
+  </div>
+</div> 
+  <div class="card">
+  <img src="{% static 'new1/images/cprog.jpeg' %}" alt="Avatar" style="width:70%">
+  <div class="container">
+    <h4><b>C Programming</b></h4>
+    <p> Basics and understanding of procedural programming. </p>
+  </div>
+</div>
+<br> </br>
+<br> </br>
+  <div class="card">
+  <img src="{% static 'new1/images/linux.jpeg' %}" alt="Avatar" style="width:70%">
+  <div class="container">
+    <h4><b>Linux Administration</b></h4>
+    <p>  Basics of the linux fundamentals and administration process.</p>
+  </div>
+</div>
+ <div class="card">
+  <img src="{% static 'new1/images/c++.jpeg' %}" alt="Avatar" style="width:70%">
+  <div class="container">
+    <h4><b>C++ Programming</b></h4>
+    <p>Basics Understanding of object oriented programming.</p>
+  </div>
+</div>
+ <div class="card">
+  <img src="{% static 'new1/images/ard.jpeg' %}" alt="Avatar" style="width:70%">
+  <div class="container">
+    <h4><b>Embedded system</b></h4>
+    <p>Development of embedded system with use of arduino.</p>
+  </div>
+</div>

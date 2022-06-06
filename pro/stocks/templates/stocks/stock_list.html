@@ -1,0 +1,32 @@
+{% extends 'stocks/stock_navbar.html' %}
+
+{% block content %}
+
+<br>
+<br>
+<hr>
+<h2>Your list of Stocks are</h2>
+{% for instance in objects %}
+    <table style="width:100%">
+    <tr>
+        <th>S.no</th>
+        <th>Stock Name</th>
+        <th>Transaction Type</th>
+        <th>No of Stocks</th>
+        <th>Price of Stocks</th>
+        <th>Transaction Date</th>
+        <td> <a href="{{instance.get_absolute_url}}">Update</a> <a href="{% url 'stock-delete' instance.id %}">Delete</a>  </td>
+    </tr>
+    <br><hr>
+    <tr>
+        <td>{{instance.id}}</td>
+        <td>{{instance.stock_name}}</td>
+        <td>{{instance.transaction_type}}</td>
+        <td>{{instance.no_of_stocks}}</td>
+        <td>{{instance.price_of_stock}}</td>
+        <td>{{instance.transaction_date}}</td>
+    </tr>
+    </table>
+{% endfor %}
+
+{% endblock %}

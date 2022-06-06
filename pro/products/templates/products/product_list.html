@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <!-- Font Awesome CSS -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>    
+<link rel="stylesheet" type="text/css" href="{% static 'products/css/style.css' %}">  
+</head>
+<body>
+
+
+<header class="header">
+  <a href="{% url 'home' %}" class="logo">Developer</a>
+  <a href="{% url 'ownerlist' %}">
+  <h3> Your Products </h3>
+</a>
+  <nav class="nav-items">
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'create' %}">Create</a>
+    <a href="{% url 'about' %}" id = "about_us">About</a>
+    <a href="{% url 'contact' %}">Contact</a>
+  </nav>
+</header>
+
+
+
+
+
+    <!-- Google Fonts -->
+
+    <div class="student-profile py-4">
+      <div class="container">
+        <div class="row">
+        {% for instance in objects %}
+          <div class="col-lg-4">
+            <div class="card shadow-sm">
+              <div class="card-header bg-transparent text-center">
+                <a href="{{instance.image.url}}"> 
+                  <img class="profile_img" src="{{instance.image.url}}" / >
+                </a>
+
+                <h3>Owner : {{instance.user}}</h3>
+                <a href="{{instance.get_absolute_url}}">{{instance.title}}</a>
+              </div>
+              
+              <div class="card-body">
+                <p class="mb-0"><strong class="pr-1">description : {{instance.description}}</strong></p>
+                <p class="mb-0"><strong class="pr-1">Price : {{instance.price}}</strong></p>
+                <p class="mb-0"><strong class="pr-1">timestamp: {{instance.timestamp}}</strong></p>
+                <a href="{% url 'update' instance.id %}">Update</a><br><hr>
+                <a href="{% url 'delete' instance.id %}">Delete</a>
+              </div>
+            </div>
+          </div>
+         {% endfor %}
+      </div>
+    </div>
+
+</body>
+</html>

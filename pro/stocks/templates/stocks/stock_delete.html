@@ -1,0 +1,15 @@
+{% extends 'stocks/stock_navbar.html' %}
+
+{% block content %}
+
+<br>
+<hr>
+<form action="{% url 'stock-delete' object.id %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <P> Do You want to delete this stock ?</P>
+    </div>
+    <button type="submit" href="{% url 'stock-delete' object.id %}" class="btn btn-primary">Yes</button>
+    <button type="submit" href="{% url 'stock-add' %}" class="btn btn-primary">No</button>
+</form>
+{% endblock %}
